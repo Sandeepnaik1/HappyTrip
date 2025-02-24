@@ -1,0 +1,32 @@
+<div class="flight-results-container">
+    <h2>Available Flights</h2>
+  
+    <!-- Check if flights are available -->
+    <div *ngIf="flightResults.length > 0; else noFlights">
+      <div *ngFor="let flight of flightResults" class="flight-card">
+        <div class="flight-card-header">
+          <img class="card-img-top" src={{flight.imageUrl}} alt="Card image cap">
+          <h3>{{ flight.flightNumber }} - {{ flight.airline }}</h3>
+          <p class="flight-duration">{{ flight.duration }}</p>
+        </div>
+        <div class="flight-card-body">
+          <div class="flight-info">
+            <p><strong>Departure:</strong> {{ flight.departureCity }} ({{ flight.departureDateTime }})</p>
+            <p><strong>Arrival:</strong> {{ flight.arrivalCity }} ({{ flight.arrivalDateTime }})</p>
+          </div>
+          <div class="flight-class">
+            <p><strong>Class of Travel:</strong> {{ flight.classOfTravel }}</p>
+          </div>
+          <div class="flight-price">
+            <p><strong>Price:</strong> ₹{{ flight.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- If no flights found -->
+    <ng-template #noFlights>
+      <p>No flights found for your search criteria.</p>
+    </ng-template>
+  </div>
+  
