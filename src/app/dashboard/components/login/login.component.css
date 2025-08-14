@@ -1,0 +1,96 @@
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.logo-container img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links .nav-link {
+  color: #fff;
+  font-weight: 500;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.nav-links .nav-link:hover {
+  color: #00d4ff;
+}
+
+.action-buttons .btn {
+  margin-left: 10px;
+  border-radius: 30px;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-image: url('../../images/flight.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-section .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+/* LOGIN MODAL */
+.login-card {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: #373838;
+  color: white;
+}
+
+.modal-body label {
+  font-weight: 500;
+}
+
+.modal-content {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}

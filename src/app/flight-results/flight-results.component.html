@@ -1,0 +1,60 @@
+<div class="flight-results-container">
+  <h2>Available Flights</h2>
+
+  <div class="flight-layout">
+    <!-- Left Column: Original Flight Cards -->
+    <div class="left-column">
+      <!-- Your original code -->
+      <div *ngIf="flightResults.length > 0; else noFlights">
+        <div *ngFor="let flight of flightResults" class="flight-card">
+          <div class="flight-card-header">
+            <img class="card-img-top" src={{flight.imageUrl}} alt="Card image cap">
+            <h3>{{ flight.flightNumber }} - {{ flight.airline }}</h3>
+            <p class="flight-duration">{{ flight.duration }}</p>
+          </div>
+          <div class="flight-card-body">
+            <div class="flight-info">
+              <p><strong>Departure:</strong> {{ flight.departureCity }} ({{ flight.departureDateTime }})</p>
+              <p><strong>Arrival:</strong> {{ flight.arrivalCity }} ({{ flight.arrivalDateTime }})</p>
+            </div>
+            <div class="flight-class">
+              <p><strong>Class of Travel:</strong> {{ flight.classOfTravel }}</p>
+            </div>
+            <div class="flight-price">
+              <p><strong>Price:</strong> ₹{{ flight.price }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noFlights>
+        <p>No flights found for your search criteria.</p>
+      </ng-template>
+
+      <button class="back-button" (click)="goBack()">⬅ Back</button>
+    </div>
+
+    <!-- Right Column: Unique Ideas -->
+    <div class="right-column">
+      <div class="travel-tip">
+        <h3>✈️ Travel Wisdom</h3>
+        <p>"The journey of a thousand miles begins with a single step."</p>
+      </div>
+
+      <div class="travel-checklist">
+        <h4>✅ Travel Checklist</h4>
+        <ul>
+          <li>Passport / ID</li>
+          <li>Tickets / Boarding Pass</li>
+          <li>Chargers & Powerbank</li>
+          <li>Snacks / Water Bottle</li>
+          <li>Travel Pillow</li>
+        </ul>
+      </div>
+
+      <div class="travel-fact">
+        <h4>🌍 Did You Know?</h4>
+        <p>Bangalore airport is the third busiest in India and one of the cleanest in Asia.</p>
+      </div>
+    </div>
+  </div>
+</div>

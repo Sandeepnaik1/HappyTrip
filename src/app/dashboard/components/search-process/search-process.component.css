@@ -1,0 +1,190 @@
+/* 🌍 Global Body Background */
+body {
+  background-image: url('../../images/Searchflight.jpg');
+  background-size: cover; /* Always cover the screen */
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-attachment: fixed; /* Smooth effect on desktop */
+}
+
+/* ✈️ Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba(250, 246, 246, 0.9), rgba(26, 27, 27, 0.9));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.subsection-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* 🗂 Sidebar */
+.sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 260px;
+  background: linear-gradient(180deg, rgba(250, 246, 246, 0.9), rgba(26, 27, 27, 0.9));
+  padding: 20px;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.sidebar a {
+  color: rgb(53, 50, 50);
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #f7f7f7;
+}
+
+.sidebar .active {
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 📦 Content Boxes */
+.box-shadow {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.coupons {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, orangered, red);
+  border: none;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, red, darkred);
+}
+
+.container {
+  padding: 30px 20px 20px;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+}
+
+/* 📱 Tablet view */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+  .container {
+    margin-left: 220px;
+  }
+}
+
+/* 📱 Mobile view */
+@media (max-width: 768px) {
+  body {
+    background-position: center top; /* Keep important part visible */
+    background-attachment: scroll; /* Fix for mobile Safari issues */
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger */
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 220px;
+    top: 50px;
+    height: calc(100vh - 50px);
+    z-index: 999;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .container {
+    margin-left: 0;
+    padding-top: 60px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .icons {
+    display: none; /* hide icons in mobile to save space */
+  }
+}
+
+/* 📱 Small mobile */
+@media (max-width: 480px) {
+  body {
+    background-position: center top;
+  }
+
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .navbar-brand {
+    font-size: 16px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .btn-primary {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+                                                
