@@ -26,12 +26,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Flight } from '../models/flight';
 import { TravelClass } from '../models/travel-class';
 import { preferedAirline } from '../models/preferedAirline';
+// import { environment } from '../src\environments';  
 
 @Injectable({
   providedIn: 'root',
 })
 export class SearchService {
-  private baseUrl = 'http://localhost:3000/'; // Change this to your backend URL
+private baseUrl = 'http://localhost:3000/';
+ // Change this to your backend URL
 
   userEnteredData = new BehaviorSubject({});
 

@@ -123,7 +123,7 @@ exports.searchFlight = async (req, res, next) => {
     res.status(200).json({ error: false, message: "Flights found", data: { flights } });
 
   } catch (error) {
-    console.error(" Error fetching flights:", error);
+    console.error("🔥 Error fetching flights:", error);
     res.status(500).json({ error: true, message: "Server error", data: null });
     next(error);
   }

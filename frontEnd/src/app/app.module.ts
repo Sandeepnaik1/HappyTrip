@@ -27,7 +27,7 @@ import { FlightResultsComponent } from './flight-results/flight-results.componen
         DashboardModule,
         BrowserModule,
         AppRoutingModule,
-        DashboardModule,
+        // DashboardModule,
         HttpClientModule,
         FormsModule,
         CommonModule
